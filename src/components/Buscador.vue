@@ -1,13 +1,13 @@
 <template>
     <div class="bus">
         <div class="contenedor-bus">
-            <select name="" id="" class="bus_select">
-                <option value="">Nature</option>
-                <option value="">Tigers</option>
-                <option value="">People</option>
+            <select v-model="categoria" name="" id="" class="bus_select">
+                <option value="Nature">Nature</option>
+                <option value="Tigers">Tigers</option>
+                <option value="People">People</option>
             </select>
             <label for="buscador">
-                <input type="text" :v-bind="query" class="bus_input" id="buscador" placeholder="Buscar...">
+                <input type="text" v-model="query" class="bus_input" id="buscador" placeholder="Buscar...">
                 <button class="btn-bus" @click="probar"><span class='material-icons'>search</span></button>
             </label>
         </div>
@@ -24,6 +24,7 @@ const client = createClient('563492ad6f917000010000016116809ae5cf43dabaf8c3336fe
 export default {
     data(){
         return{
+            categoria:'Nature',
             query: '',
             datos: [],
             obj : ''
@@ -31,7 +32,11 @@ export default {
     },
     methods:{
         probar(){
-            alert('Hola '+this.query);
+            if(this.query.trim()==""){
+                alert("Ingrese termino de busqueda");
+            }else{
+                alert('Categoría: '+this.categoria+" Buscar: "+this.query);
+            }
         }
     }
 
@@ -63,7 +68,7 @@ export default {
         margin-left: 20px;
         margin-right: 20px;
         text-align: center;
-        width: 400px;
+        width: 300px;
         height: 50px;
         color: #856E55;
     }
