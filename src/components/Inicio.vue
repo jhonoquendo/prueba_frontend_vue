@@ -24,7 +24,7 @@ export default {
 
 <style>
     body{
-        background: url(../assets/img/gota.jpg);
+        background: url(../assets/img/rt.jpg);
         background-position: 50% 50%;
     }
 </style>
