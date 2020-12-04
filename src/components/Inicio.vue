@@ -24,7 +24,7 @@ export default {
 
 <style>
     body{
-        background: url(../assets/img/rt.jpg);
+        background: url(../assets/img/lampara.jpg);
         background-position: 50% 50%;
     }
 </style>
